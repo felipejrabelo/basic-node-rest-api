@@ -1,0 +1,23 @@
+{
+  "name": "basic-node-rest-api",
+  "version": "1.0.0",
+  "description": "Basic Node Rest API for Testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipejrabelo/basic-node-rest-api.git"
+  },
+  "author": "Felipe Rabelo Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipejrabelo/basic-node-rest-api/issues"
+  },
+  "homepage": "https://github.com/felipejrabelo/basic-node-rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.2.1"
+  }
+}
