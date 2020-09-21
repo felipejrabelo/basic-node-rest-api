@@ -24,7 +24,7 @@ app.get('/api/remedios', (req, res) => {
 app.get('/api/remedios/:id', (req, res) => {
     const remedio = remedios.find( c => c.id === parseInt(req.params.id));
     if(!remedio) // 404 - Not Found
-        res.status(404).send(`O remedio com ID: ${req.params.id} não foi encontado`);
+        return res.status(404).send(`O remedio com ID: ${req.params.id} não foi encontado`);
     res.send(remedio);
 });
 
@@ -57,6 +57,16 @@ app.put('/api/remedios/:id', (req, res) => {
 
 });
 
+app.delete('/api/remedios/:id', (req, res) => {
+    const remedio = remedios.find( remedio => remedio.id === parseInt(req.params.id));
+    if(!remedio) // 404 - Not Found
+        return res.status(404).send(`O remedio com ID: ${req.params.id} não foi encontado`);
+
+    const index = remedios.indexOf(remedio);
+    remedios.splice(index,1);
+    res.send(remedio);
+
+});
 
 // How to read params
 app.get('/api/params/:id', (req, res) => {
