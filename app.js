@@ -1,9 +1,13 @@
 const Joi = require('joi');
 const express = require('express');
+const helmet = require('helmet');
 const app = express();
 
 // Middleware to parse json from the http body
 app.use(express.json());
+
+// security best practices
+app.use(helmet()); // or app.disable('x-powered-by');
 
 const remedios = [
     {id: 1, nome: 'Remedio 1'},
